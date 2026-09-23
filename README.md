@@ -95,4 +95,4 @@ letters_ += '.'
 print('Инициалы: ', letters_.upper())
 print('Длина (символов): ', lenFIO + count_space)
 ```
-![](./images/lab01/05.example.png)
+![](./images/lab01/05.example1.png)
