@@ -90,6 +90,7 @@ for i in FIO_No_Space:
 
 for i in FIO_No_Space:
     letters_ += i[0]
+letters_ += '.'
 
 print('Инициалы: ', letters_.upper())
 print('Длина (символов): ', lenFIO + count_space)
