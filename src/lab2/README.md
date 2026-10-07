@@ -140,7 +140,7 @@ def format_record(record):
 
     FIO = FIO.split()
     group = group.strip()
-    if 3 < len(FIO) < 2: raise TypeError('Необходимо ввести полное ФИО или имя и фаиилию')
+    if 3 < len(FIO) < 2: raise TypeError('Необходимо ввести полное ФИО или имя и фамилию')
     if len(FIO) == 2:
         new_FIO = FIO[0][0].upper() + FIO[0][1:].lower() + ' ' + FIO[1][0].upper() + '.'
     if len(FIO) == 3:
