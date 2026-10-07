@@ -55,7 +55,7 @@ print('Итого к оплате:',f'{total:.2f}','₽')
 
 ## Задание 4
 ### Ввод: число - количество минут. Вывод: время в формате чч:мм
-```pyhton
+```python
 minutes_ = int(input('Минуты:'))
 
 if minutes_ <= 0: raise ValueError('Введите количество минут большее 0.')
@@ -90,6 +90,7 @@ for i in FIO_No_Space:
 
 for i in FIO_No_Space:
     letters_ += i[0]
+letters_ += '.'
 
 print('Инициалы: ', letters_.upper())
 print('Длина (символов): ', lenFIO + count_space)

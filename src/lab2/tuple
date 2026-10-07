@@ -1,0 +1,22 @@
+def format_record(record):
+    if len(record) == 3: FIO, group,  gpa = record
+    else: raise TypeError('Проверьте, что вы не забыли ввести все необходимое')
+    if len(FIO.strip()) == 0: raise ValueError('ФИО должно содержать как минимум фамилию и имя')
+    if len(group.strip()) == 0: raise ValueError('Группа не может быть пустой')
+    if len(str(gpa).strip()) == 0: raise ValueError('GPA не может быть пустым')
+    if not isinstance(gpa,float): raise ValueError('GPA необходимо вводить в формате float')
+    if not 0.0 <= gpa <= 5.5: raise ValueError('GPA должен быть в диапазоне [0.0, 5.5]')
+
+    FIO = FIO.split()
+    group = group.strip()
+    if 3 < len(FIO) < 2: raise TypeError('Необходимо ввести полное ФИО или имя и фаиилию')
+    if len(FIO) == 2:
+        new_FIO = FIO[0][0].upper() + FIO[0][1:].lower() + ' ' + FIO[1][0].upper() + '.'
+    if len(FIO) == 3:
+        new_FIO = FIO[0][0].upper() + FIO[0][1:].lower() + ' ' + FIO[1][0].upper() + '.' + FIO[2][0].upper() + '.'
+    return f'{new_FIO}, гр. {group}, GPA {gpa:.2f}'
+
+print(format_record(('Иванов Иван Иванович','BIVT-25',4.6)))
+print(format_record(('Петров Пётр','IKBO-12',5.0)))
+print(format_record(('Петров Пётр Петрович','IKBO-12',5.0)))
+print(format_record(('  сидорова  анна   сергеевна ', 'ABB-01', 3.999)))
