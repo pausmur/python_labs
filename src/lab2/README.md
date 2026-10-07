@@ -17,7 +17,7 @@ print(min_max([-5,-2,-9]))
 print(min_max([1.5,2,2.0,-3.1]))
 print(min_max([]))
 ```
-![](./images/lab02/arrays.min_max.png)
+<img width="814" height="222" alt="arrays min_max" src="https://github.com/user-attachments/assets/58f62c1c-4710-40ec-9876-c6445422a763" />
 
 ### Функция №2 - сортировка списка уникальных значений без встроенных функций sort() и sorted()
 ```python
