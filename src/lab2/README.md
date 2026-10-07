@@ -39,7 +39,7 @@ print(unique_sorted([]))
 print(unique_sorted([-1,-1,0,2,2]))
 print(unique_sorted([1.0,1,2.5,2.5,0]))
 ```
-![](./images/lab02/arrays.unique_sorted.png)
+<img width="337" height="115" alt="arrays unique_sorted" src="https://github.com/user-attachments/assets/03b9162b-1cba-46a8-b045-1d63ab114504" />
 
 ### Функция №3 - расплющивание списка кортежей(матрицы) с учетом значений внутри (не числа не принимаются)
 ```python
@@ -57,7 +57,7 @@ print(flatten([[1,2],(3,4,5)]))
 print(flatten([[1],[],[2,3]]))
 print(flatten([[1,2],'ab']))
 ```
-![](./images/lab02/arrays.flatten.png)
+<img width="833" height="221" alt="arrays flatten" src="https://github.com/user-attachments/assets/cd757245-fd24-48e1-ad58-a3353a6f330b" />
 
 ## Задание B
 ### Функция №1 - транспонирование матрицы с проверкой на 'рваность' матрицы
@@ -83,7 +83,7 @@ print(transpose([[1,2],[3,4]]))
 print(transpose([]))
 print(transpose([[1,2],[3]]))
 ```
-![](./images/lab02/matrix.transpose.png)
+<img width="852" height="284" alt="matrix transpose" src="https://github.com/user-attachments/assets/d6b2f542-8a59-49f9-93d3-92a8c2d86132" />
 
 ### Функция №2 - суммирование по строкам матрицы (с проверкой на 'рваность' матрицы)
 ```python
@@ -102,7 +102,7 @@ print(row_sums([[-1,1],[10,-10]]))
 print(row_sums([[0,0],[0,0]]))
 print(row_sums([[1,2],[3]]))
 ```
-![](./images/lab02/matrix.row_sums.png)
+<img width="849" height="261" alt="matrix row_sums" src="https://github.com/user-attachments/assets/af61412d-b729-4aa6-a8fa-10614faf4230" />
 
 ### Функция №3 - суммирование по столбцам матрицы (с проверкой на 'рваность' матрицы)
 ```python
@@ -124,7 +124,7 @@ print(col_sums([[-1,1],[10,-10]]))
 print(col_sums([[0,0],[0,0]]))
 print(col_sums([[1,2],[3]]))
 ```
-![](./images/lab02/matrix.col_sums.png)
+<img width="840" height="265" alt="matrix col_sums" src="https://github.com/user-attachments/assets/620b4fee-c67e-48eb-b95f-d6297172da55" />
 
 ## Задание C
 ### Получаем на вход кортеж и выдаем строку по определенному формату
@@ -152,4 +152,4 @@ print(format_record(('Петров Пётр','IKBO-12',5.0)))
 print(format_record(('Петров Пётр Петрович','IKBO-12',5.0)))
 print(format_record(('  сидорова  анна   сергеевна ', 'ABB-01', 3.999)))
 ```
-![](./images/lab02/tuples.png)
+<img width="333" height="107" alt="tuples" src="https://github.com/user-attachments/assets/96af293c-fc4f-4334-9e62-b76cdcaa5866" />
