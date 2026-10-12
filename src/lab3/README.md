@@ -10,7 +10,8 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     text_norm = ' '.join(words)
     return text_norm
 ```
-![](./images/lab03/normalize.png)
+<img width="307" height="116" alt="normalize" src="https://github.com/user-attachments/assets/e0933d26-6452-47f2-8933-9757ad5bc114" />
+
 
 ### Функция tokenize (приводит "нормализированный" текст к формату списка, где объект - слово)
 ```python
@@ -18,7 +19,8 @@ def tokenize(text: str) -> list[str]:
     from re import findall
     return findall(r'\w+(?:-\w+)*', text)
 ```
-![](./images/lab03/tokenize.png)
+<img width="315" height="134" alt="tokenize" src="https://github.com/user-attachments/assets/ed46d45d-4863-4d29-a059-88376721d101" />
+
 
 ### Функция count_freq (выводит словарь, где записано слово и количество его повторений, слова записаны в порядке убывания)
 ```python
@@ -32,7 +34,9 @@ def count_freq(tokens: list[str]) -> dict[str, int]:
 def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
     return sorted(freq.items(), key = lambda kv: (-kv[1], kv[0]))[:n]
 ```
-![](./images/lab03/freq_count+top_n.png)
+#### Совместный вывод функций count_freq и top_n
+<img width="301" height="85" alt="freq_count+top_n" src="https://github.com/user-attachments/assets/1c22cc9d-18fd-47f9-a6b5-96078997a0b3" />
+
 
 ## Задание 2
 ### Вывод текста с применением всех функций из задания 1
@@ -54,4 +58,4 @@ print('Топ-5 слов:')
 for top in top_words:
     print(f'{top[0]} : {top[1]}')
 ```
-![](./images/lab03/text_stats)
+<img width="657" height="177" alt="text_stats" src="https://github.com/user-attachments/assets/304f4378-d706-435b-98e5-91c9128a2be1" />
