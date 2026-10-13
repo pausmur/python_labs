@@ -29,7 +29,7 @@ def count_freq(tokens: list[str]) -> dict[str, int]:
     return {element: tokens.count(element) for element in unique_tokens}
 ```
 
-### Функция top_n (выводит топ слов по количеству повторенийб число топа зависит от ввода пользователя)
+### Функция top_n (выводит топ слов по количеству повторенийб число топа зависит от ввода пользователя, если ввода не поступило - выводит топ-5)
 ```python
 def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
     return sorted(freq.items(), key = lambda kv: (-kv[1], kv[0]))[:n]
