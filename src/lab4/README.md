@@ -17,8 +17,7 @@ from pathlib import Path
 import csv
 from typing import Iterable, Sequence
 
-def write_csv(rows: Iterable[Sequence], path: str | Path,
-              header: tuple[str, ...] | None = None) -> None:
+def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...] | None = None) -> None:
     p = Path(path)
     rows = list(rows)
 
