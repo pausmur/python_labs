@@ -1,7 +1,7 @@
 # Лабораторная №4
 ## Задание 1: реализация функций read_text и write_csv
 ### Функция read_text:
-#### Читает файл в указанной кодировке и возвращает как одну строку (хотя стоит считывать построчно). Если файл пустой, то выводит пустую строку
+#### Читает файл в указанной кодировке (пользователь может вписать ее самостоятельно, но по умолчанию стоит utf-8 и возвращает как одну строку (хотя стоит считывать построчно). Если файл пустой, то выводит пустую строку
 ```python
 from pathlib import Path
 
@@ -37,12 +37,12 @@ def write_csv(rows: Iterable[Sequence], path: str | Path,
             w.writerow(r)
 ```
 #### Тест-кейс
-![](./images/lab04/lab4.1.text.png)
+<img width="363" height="41" alt="lab4 1 text" src="https://github.com/user-attachments/assets/c3e76e45-6b5e-46b5-b8ee-ab6842204f51" />
 
-![](./images/lab04/lab4.1.csv.png)
+<img width="181" height="102" alt="lab4 1 csv" src="https://github.com/user-attachments/assets/e4d2e040-a2f2-4654-840d-510e23e983dd" />
 
 ## Задание 2: скрипт, читающий файли с использованием ф-ций из задания 1
-#### Скрипт читает файл, лежащий в data, нормализует текст из этого файла, токенизирует и считает частоты слов, после чего сохраняет report.csv с колонками word, count, а в консоль печатает краткое резюме
+#### Скрипт читает файл, лежащий в data, нормализует текст из этого файла, токенизирует и считает частоты слов, после чего сохраняет report.csv с колонками word, count, а в консоль печатает краткое резюме. Если файл не найден или указана неверная кодировка, то через цикл except 'ловим' ошибку и принтим ее, после чего выходим из цикла try-except.
 ```python
 import sys
 from src.lib.text import normalize, tokenize, count_freq, top_n
@@ -75,16 +75,21 @@ if __name__ == '__main__':
     text_report()
 ```
 #### Вывод при одном файле
-![](./images/lab04/lab4.2.text.png)
+<img width="670" height="132" alt="lab4 2 text" src="https://github.com/user-attachments/assets/8300176a-2732-4680-9a50-e0c6377cfa1e" />
 
-![](./images/lab04/lab4.2.text.png)
+<img width="160" height="73" alt="lab4 2 csv" src="https://github.com/user-attachments/assets/e1703d90-e4f9-43fd-8343-39b44494dbc3" />
 
-#### Вывод при пустом файле
-![](./images/lab04/lab4.2.text.empty.png)
+#### Вывод при пустом файле (в report.csv остается только заголовок)
+<img width="674" height="87" alt="lab4 2 text empty" src="https://github.com/user-attachments/assets/3ea65a88-b216-46fd-8283-5acb3b655940" />
 
-![](./images/lab04/lab4.2.csv.empty.png)
+<img width="161" height="49" alt="lab4 2 csv empty" src="https://github.com/user-attachments/assets/edd2b2eb-b9e0-4e00-80d5-ad3a08ceb48b" />
 
-#### Вывод с кодировкой cp1251
-![](./images/lab04/lab4.2.text.cp1251.png)
+#### Вывод с кодировкой cp1251 (для вывода необходимо прописать в терминале py -m src.lab4.text_report --in data.lab04.input --encoding cp1251)
+<img width="1037" height="113" alt="lab4 2 text cp1251" src="https://github.com/user-attachments/assets/c7fbd860-80cf-4f58-b617-acd8c78781e0" />
 
-![](./images/lab04/lab4.2.text.cp1251.png)
+<img width="162" height="47" alt="lab4 2 csv cp1251" src="https://github.com/user-attachments/assets/cae2a7d2-72aa-41bf-a3d2-b4efa675fb08" />
+
+### Краевые случаи
+#### data/input.txt не существует - цикл try/except поймает ошибку и выведет ее в консоли
+#### При пустом входе report.csv будет содержать только заголовок
+#### При нестандартной кодировке необходимо указать в терминале --encode ... (где ... тип кодировки, пример у тест-кейса с кодировкой cp1251)
