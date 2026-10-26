@@ -1,7 +1,4 @@
-[Bb]in/
-[Oo]bj/
-.vs/
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
