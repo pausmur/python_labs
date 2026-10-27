@@ -56,6 +56,8 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 ```
 ### Вывод из терминала + результат в data/lab05/out:
 #### py -m src.lab5.json_csv
+<img width="373" height="167" alt="lab5_json_to_csv" src="https://github.com/user-attachments/assets/c815ccbd-a9b3-493a-84d4-1f6120b6ac0e" />
+<img width="430" height="678" alt="lab5_csv_to_json" src="https://github.com/user-attachments/assets/8d09d7d5-759a-49e5-b3d3-2fd6b5b230f0" />
 
 ## Задание 2: реализация функции csv_to_xlsx
 ### Функция читает csv файл, проверяя на ошибки, после чего конвертирует его в формат xlsx
@@ -89,3 +91,4 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
 ```
 ### Вывод из терминала + результат в data/lab05/out
 #### py -m src.lab5.csv_xlsx
+<img width="327" height="169" alt="lab5 csv_to_xlsx" src="https://github.com/user-attachments/assets/a24e410d-7f80-471d-9d3d-ff0a1a493df8" />
