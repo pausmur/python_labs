@@ -19,9 +19,9 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
             try:
                 json_list = json.load(file)
             except json.JSONDecodeError:
-                 print('Пустой файл')
+                 print('Пустой файл или ошибка чтения(неверный формат)')
                  sys.exit(1)
-
+    if json_list is None: raise FileNotFoundError('Пустой файл')
     if not isinstance(json_list,list): raise ValueError('Неверный тип данных')
     if not all(isinstance(list_item,dict) for list_item in json_list): raise ValueError('Неверный тип данных')
 
@@ -54,7 +54,7 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         if DReader.fieldnames == None: raise ValueError('Пустой заголовок')
         csv_list = list(DReader)
 
-    if len(csv_list) == 0: raise ValueError('Пустой файл')
+    if csv_list is None: raise ValueError('Пустой файл')
     with open(json_file, "w", encoding = "utf-8") as file:
         json.dump(csv_list, file, ensure_ascii = False, indent = 2)
 ```
@@ -79,7 +79,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
 
     with open(csv_file, 'r', newline = '', encoding = 'utf-8') as file:
         file_reader = list(csv.reader(file))
-
+    if file_reader is None: raise FileNotFoundError('Пустой файл')
     wb = Workbook()
     ws = wb.active
     ws.title = 'Sheet1'
@@ -89,7 +89,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
         mx = 0
         lt = column[0].column_letter
         for item in column:
-            if not(item.value) is None and len(str(item.value)) > mx: mx =  len(str(item.value))
+            if not(item.value is None) and len(str(item.value)) > mx: mx =  len(str(item.value))
         ws.column_dimensions[lt].width = max(mx, 8)
     wb.save(xlsx_file)
 ```

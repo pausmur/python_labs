@@ -11,6 +11,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
 
     with open(csv_file, 'r', newline = '', encoding = 'utf-8') as file:
         file_reader = list(csv.reader(file))
+    if file_reader is None: raise FileNotFoundError('Пустой файл')
 
     wb = Workbook()
     ws = wb.active

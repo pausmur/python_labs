@@ -15,9 +15,9 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
             try:
                 json_list = json.load(file)
             except json.JSONDecodeError:
-                 print('Пустой файл')
+                 print('Пустой файл или ошибка чтения(неверный формат)')
                  sys.exit(1)
-
+    if json_list is None: raise FileNotFoundError('Пустой файл')
     if not isinstance(json_list,list): raise ValueError('Неверный тип данных')
     if not all(isinstance(list_item,dict) for list_item in json_list): raise ValueError('Неверный тип данных')
 
