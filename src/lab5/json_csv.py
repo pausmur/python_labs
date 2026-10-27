@@ -7,7 +7,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     json_file = Path(json_path)
     csv_file = Path(csv_path)
 
-    if json_file is None: raise FileNotFoundError('Файл пустой')
+    if not(json_file.exists()): raise FileNotFoundError('Файл пустой')
     if json_file.suffix != '.json': raise ValueError('Неверный тип файла')
     if csv_file.suffix != '.csv': raise ValueError('Неверный тип файла')
 
@@ -34,7 +34,7 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 def csv_to_json(csv_path: str, json_path: str) -> None:
     json_file = Path(json_path)
     csv_file = Path(csv_path)
-    if json_file is None: raise FileNotFoundError('Пустой файл')
+    if not(json_file.exists()): raise FileNotFoundError('Пустой файл')
     if json_file.suffix != '.json': raise ValueError('Неверный тип файла')
     if  csv_file.suffix != '.csv': raise ValueError('Неверный тип файла')
 

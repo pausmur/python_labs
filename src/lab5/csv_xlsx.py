@@ -5,7 +5,7 @@ from openpyxl import Workbook
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     csv_file = Path(csv_path)
     xlsx_file = Path(xlsx_path)
-    if csv_file is None: raise FileNotFoundError('Пустой файл')
+    if (csv_file.exists()): raise FileNotFoundError('Пустой файл')
     if csv_file.suffix != '.csv': raise ValueError('Неверный тип файла')
     if xlsx_file.suffix != '.xlsx': raise ValueError('Неверный тип файла')
 
