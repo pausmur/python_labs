@@ -11,9 +11,9 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     json_file = Path(json_path)
     csv_file = Path(csv_path)
 
-    if not(json_file.exists()): raise FileNotFoundError('Файл пустой')
-    if json_file.suffix != '.json': raise ValueError('Неверный тип файла')
-    if csv_file.suffix != '.csv': raise ValueError('Неверный тип файла')
+    if not(json_file.exists()): raise FileNotFoundError('Пустой файл или неверный путь/не существует')
+    if json_file.suffix.lower() != '.json': raise ValueError('Неверный тип файла')
+    if csv_file.suffix.lower() != '.csv': raise ValueError('Неверный тип файла')
 
     with open(json_file, "r", encoding="utf-8") as file:
             try:
@@ -45,9 +45,9 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
 def csv_to_json(csv_path: str, json_path: str) -> None:
     json_file = Path(json_path)
     csv_file = Path(csv_path)
-    if not(json_file.exists()): raise FileNotFoundError('Пустой файл')
-    if json_file.suffix != '.json': raise ValueError('Неверный тип файла')
-    if  csv_file.suffix != '.csv': raise ValueError('Неверный тип файла')
+    if not(json_file.exists()): raise FileNotFoundError('Пустой файл или неверный путь/не существует')
+    if json_file.suffix.lower() != '.json': raise ValueError('Неверный тип файла')
+    if  csv_file.suffix.lower() != '.csv': raise ValueError('Неверный тип файла')
 
     with open(csv_file, 'r', newline = '', encoding = 'utf-8') as file:
         DReader = csv.DictReader(file)
@@ -73,9 +73,9 @@ from openpyxl import Workbook
 def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     csv_file = Path(csv_path)
     xlsx_file = Path(xlsx_path)
-    if not(csv_file.exists()): raise FileNotFoundError('Пустой файл')
-    if csv_file.suffix != '.csv': raise ValueError('Неверный тип файла')
-    if xlsx_file.suffix != '.xlsx': raise ValueError('Неверный тип файла')
+    if not(csv_file.exists()): raise FileNotFoundError('Пустой файл или неверный путь/не существует')
+    if csv_file.suffix.lower() != '.csv': raise ValueError('Неверный тип файла')
+    if xlsx_file.suffix.lower() != '.xlsx': raise ValueError('Неверный тип файла')
 
     with open(csv_file, 'r', newline = '', encoding = 'utf-8') as file:
         file_reader = list(csv.reader(file))
