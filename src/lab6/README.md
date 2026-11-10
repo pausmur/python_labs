@@ -53,22 +53,25 @@ if __name__ == '__main__':
     main()
 ```
 ### Примеры вывода cat:
-
+<img width="972" height="159" alt="cli_text cat" src="https://github.com/user-attachments/assets/e25166ab-532d-4791-afc7-2c129a39d777" />
+<img width="969" height="156" alt="cli_text cat-n" src="https://github.com/user-attachments/assets/a08b64ad-2180-42b1-8e10-5ab0ea33c43a" />
 
 #### Для запуска через консоль (построчно и пронумерованно):
-*** py -m src.lab6.cli_text cat --input data/lab06/text.txt ***
-*** py -m src.lab6.cli_text cat --input data/lab06/text.txt -n ***
+```py -m src.lab6.cli_text cat --input data/lab06/text.txt```
+
+```py -m src.lab6.cli_text cat --input data/lab06/text.txt -n```
 
 ### Примеры вывода stats:
-
+<img width="964" height="199" alt="cli_text stats" src="https://github.com/user-attachments/assets/9dd1136d-4080-4082-ae6d-e25d3d022ad9" />
+<img width="1036" height="228" alt="cli_text stats topn" src="https://github.com/user-attachments/assets/81881007-0285-4905-9b7e-94f538c2ce47" />
 
 #### Для запуска через консоль (топ по умолчанию и выборочный)
-*** py -m src.lab6.cli_text stats --input data/lab06/text.txt ***
-*** py -m src.lab6.cli_text stats --input data/lab06/text.txt --top 6 ***
+```py -m src.lab6.cli_text stats --input data/lab06/text.txt```
+```py -m src.lab6.cli_text stats --input data/lab06/text.txt --top 6```
 
 ### Вывод help
-*** py -m src.lab6.cli_text --help ***
-
+```py -m src.lab6.cli_text --help```
+<img width="727" height="296" alt="cli_text help" src="https://github.com/user-attachments/assets/2816217d-60ed-4f53-a7f7-89be23c2b1a1" />
 
 ## Задание 2 - реализация конвертации разных типов файлов
 ```python
@@ -107,13 +110,17 @@ if __name__ == '__main__':
     main()
 ```
 ### Примеры вывода:
-
-
+<img width="291" height="173" alt="cli_convert json2csv" src="https://github.com/user-attachments/assets/f60862af-5e57-4b8f-8ad7-6afeb27804b0" />
+<img width="326" height="677" alt="cli_convert csv2json" src="https://github.com/user-attachments/assets/0920b3bc-20c5-4413-b8df-26f09725a571" />
+<img width="291" height="186" alt="cli_convert csv2xlsx" src="https://github.com/user-attachments/assets/8c20eeb6-dd81-4831-9993-4c267fc3ca1c" />
 
 #### Для запуска через консоль:
-*** py -m src.lab6.cli_convert json2csv --in data/lab05/samples/people.json --out data/lab06/json2csv.csv ***
-*** py -m src.lab6.cli_convert csv2json --in data/lab05/samples/people.csv --out data/lab06/csv2json.json ***
-*** py -m src.lab6.cli_convert csv2xlsx --in data/lab05/samples/people.csv --out data/lab06/csv2xlsx.xlsx ***
+```py -m src.lab6.cli_convert json2csv --in data/lab05/samples/people.json --out data/lab06/json2csv.csv```
+
+```py -m src.lab6.cli_convert csv2json --in data/lab05/samples/people.csv --out data/lab06/csv2json.json```
+
+```py -m src.lab6.cli_convert csv2xlsx --in data/lab05/samples/people.csv --out data/lab06/csv2xlsx.xlsx```
 
 ### Вывод help
-*** py -m src.lab6.cli_convert --help ***
+```py -m src.lab6.cli_convert --help```
+<img width="744" height="291" alt="help cli_convert" src="https://github.com/user-attachments/assets/dd25e67b-3a65-44e9-9485-38a430f90c80" />
