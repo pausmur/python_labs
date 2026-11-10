@@ -27,7 +27,7 @@ def main():
         except FileNotFoundError:
             parser.error('Файл пуст или не найден')
         if args.n:
-            for cnt in range(1, len(rows)):
+            for cnt in range(1, len(rows) + 1):
                 print(f'{cnt} {rows[cnt - 1]}')
         else:
             for row in rows: print(row)
