@@ -33,7 +33,16 @@ def two_sum_brute(nums, target) -> tuple[int, int] | None:
     return None
 ```
 ### Two_sum через словарь - аналогично перебору пар ищет индексы, но быстрее с помощью словаря, совершая 1 проход. Шагов O(n)
-
+```python
+def two_sum_fast(nums, target) -> tuple[int, int] | None:
+    seen = {}
+    for i, x in enumerate(nums):
+        if target - x in seen:
+            return (seen[target - x], i)
+        else:
+            seen[x] = seen.get(x,0) or i
+    return None
+```
 ## Задание 2 - сортировки
 ### Сортировка пузырьком - проходим по списку, меняя местами соседей, если левый больше правого. Шагов O(n**2)
 ```python
