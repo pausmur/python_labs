@@ -39,8 +39,7 @@ def two_sum_fast(nums, target) -> tuple[int, int] | None:
     for i, x in enumerate(nums):
         if target - x in seen:
             return (seen[target - x], i)
-        else:
-            seen[x] = seen.get(x,0) or i
+        elif x not in seen: seen[x] = i
     return None
 ```
 ## Задание 2 - сортировки
